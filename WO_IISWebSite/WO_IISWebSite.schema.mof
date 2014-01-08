@@ -1,0 +1,12 @@
+[classversion("1.0.0"), FriendlyName("WebSite")] 
+class WO_IISWebSite : OMI_BaseResource
+{
+  [Key] string Name;
+  [write,ValueMap{"Present", "Absent"},Values{"Present", "Absent"}] string Ensure;
+  [write] string PhysicalPath;
+  [write] string ApplicationPool;
+  [write,ValueMap{"Started","Stopped"},Values{"Started", "Stopped"}] string State;
+  [write] sint32 ID;
+  [write] string EnabledProtocols[];
+  [write] sint32 ConnectionTimeout;
+};
