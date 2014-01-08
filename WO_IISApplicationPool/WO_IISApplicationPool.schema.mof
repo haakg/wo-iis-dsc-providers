@@ -1,0 +1,26 @@
+[classversion("1.0.0"), FriendlyName("ApplicationPool")] 
+class WO_IISApplicationPool : OMI_BaseResource
+{
+  [Key] string Name;
+  [write,ValueMap{"Present", "Absent"},Values{"Present", "Absent"}] string Ensure;
+  [write,ValueMap{"Started", "Stopped"},Values{"Started", "Stopped"}] string State;
+  [write,ValueMap{"v2.0","v4.0","NoManagedCode"},Values{"v2.0", "v4.0","NoManagedCode"}] string managedRuntimeVersion;
+  [write] boolean enable32BitAppOnWin64;
+  [write,ValueMap{"Integrated", "Classic"},Values{"Integrated", "Classic"}] string managedPipelineMode;
+  [write] sint32 queueLength;
+  [write] boolean autoStart;
+  [write,ValueMap{"OnDemand", "AlwaysRunning"},Values{"OnDemand", "AlwaysRunning"}] string startMode;
+  [write] string username;
+  [write] string password;
+  [write,ValueMap{"ApplicationPoolIdentity", "NetworkService", "LocalService", "LocalSystem", "SpecificUser"},Values{"ApplicationPoolIdentity", "NetworkService", "LocalService", "LocalSystem", "SpecificUser"}] string identityType;
+  [write] sint32 idleTimeout;
+  [write,ValueMap{"Terminate", "Suspend"},Values{"Terminate", "Suspend"}] string idleTimeoutAction;
+  [write] boolean loadUserProfile;
+  [write] boolean disallowOverlappingRotation;
+  [write] boolean disallowRotationOnConfigChange;
+  [write] sint32 privateMemory;
+  [write] sint32 time;
+  [write] sint32 requests;
+  [write] sint32 memory;
+  [write] string schedule;
+};
