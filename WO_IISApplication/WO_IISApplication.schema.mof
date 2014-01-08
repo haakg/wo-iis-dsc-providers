@@ -1,0 +1,10 @@
+[classversion("1.0.0"), FriendlyName("WebApplication")] 
+class WO_IISApplication : OMI_BaseResource
+{
+  [Key] string Name;
+  [write] string PhysicalPath;
+  [write,ValueMap{"Present", "Absent"},Values{"Present", "Absent"}] string Ensure;
+  [write] string ApplicationPool;
+  [write] string Site;
+  [write] string EnabledProtocols[];
+};
