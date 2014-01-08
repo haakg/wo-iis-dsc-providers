@@ -1,0 +1,9 @@
+[classversion("1.0.0"), FriendlyName("WebBinding")] 
+class WO_IISBinding : OMI_BaseResource
+{
+  [Key] string Site;
+  [write,ValueMap{"Present", "Absent"},Values{"Present", "Absent"}] string Ensure;
+  [key] string Protocol;
+  [key] string BindingInfo;
+  [write] string Certificate;
+};
